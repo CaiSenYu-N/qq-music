@@ -1,0 +1,23 @@
+{
+  "name": "qq-music",
+  "version": "1.0.0",
+  "description": "QQ Music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaiSenYu-N/qq-music.git"
+  },
+  "keywords": [],
+  "author": {
+    "name":"蔡森屿",
+    "email": "392818050@qq.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaiSenYu-N/qq-music/issues"
+  },
+  "homepage": "https://github.com/CaiSenYu-N/qq-music#readme"
+}
