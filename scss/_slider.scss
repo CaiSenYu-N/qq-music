@@ -1,0 +1,18 @@
+.qq-slider {
+    width: 100%;
+    overflow: hidden;
+    .qq-slider-warp {
+        display: flex;
+    }
+}
+    .qq-slider-item {
+        flex-basis: 100%;
+        > a {
+            display: block;
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    

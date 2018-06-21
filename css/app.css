@@ -18,5 +18,16 @@ h1 {
     height: 25px;
     margin-left: 10px; }
 
-body {
-  background: #f4f4f4; }
+.qq-slider {
+  width: 100%;
+  overflow: hidden; }
+  .qq-slider .qq-slider-wrap {
+    display: flex; }
+
+.qq-slider-item {
+  flex-basis: 100%; }
+  .qq-slider-item > a {
+    display: block; }
+    .qq-slider-item > a img {
+      width: 100%;
+      display: block; }
