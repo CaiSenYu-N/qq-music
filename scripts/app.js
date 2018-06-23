@@ -1,6 +1,6 @@
 (function() {
 
-    fetch('/json/rec.json')
+    fetch('/JSON/rec.json')
         .then(res => res.json())
         .then(render)
 
