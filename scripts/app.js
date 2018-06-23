@@ -1,16 +1,44 @@
-(function(){
+(function() {
 
-    let slider = new Slider({
-        el: document.querySelector('#slider'),
-        slides:[
-            { link: '#1', image: 'images/luhan.png'},
-            { link: '#2', image: 'images/one.png'},
-            { link: '#3', image: 'images/yanzhi.png'},
-            { link: '#4', image: 'images/tengxun.png'},
-            { link: '#5', image: 'images/aidou.png'}
-        ]
-    })
+    fetch('/json/rec.json')
+        .then(res => res.json())
+        .then(render)
 
-    window.slider = slider
+    function render(json) {
+        renderSlider(json.data.slider)
+        renderRadios(json.data.radioList)
+        renderPlaylists(json.data.songList)
+    }
 
+    function renderSlider(slides) {
+        slides = slides.map(slide => {
+            return { link: slide.linkUrl, image: slide.picUrl }
+        })
+        new Slider({
+            el: document.querySelector('#slider'),
+            slides
+        })
+    }
+
+    function renderRadios(radios) {
+        document.querySelector('.radios .list').innerHTML = radios.map(radio => 
+        `<div class="list-item">
+            <div class="list-media">
+                <img src="${radio.picUrl}">
+                <span class="icon icon-play"></span>
+            </div>
+            <div class="list-title">${radio.Ftitle}</div>
+        </div>` ).join('')
+    }
+
+    function renderPlaylists(playlists) {
+        document.querySelector('.playlists .list').innerHTML = playlists.map(list => 
+        `<div class="list-item">
+            <div class="list-media">
+                <img src="${list.picUrl}">
+                <span class="icon icon-play"></span>
+            </div>
+            <div class="list-title">${list.songListDesc}</div>
+        </div>` ).join('')
+    }
 })()
