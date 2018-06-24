@@ -12,6 +12,8 @@
         <h1>QQ 音乐</h1>
         <img src="images/logo.png" alt="Logo" id="logo">
     </header>
+
+    <!-- Tab切换 -->
     <nav class="navbar">
         <ul class="nav-list">
             <li class="nav-item active" data-role="tab" data-view=".rec-view">推荐</li>
@@ -21,6 +23,8 @@
     </nav>
 
     <div class="tab-contents">
+
+         <!-- 推荐页 -->
         <div class="rec-view tab-content">
             <div class="qq-slider" id="slider"></div>
             <div class="radios">
@@ -31,18 +35,58 @@
                 <h2 class="title">热门歌单</h2>
                 <div class="list"></div>
             </div>
+            <footer class="mod-footer active">
+                <p class="list-more">
+                    <a href="#">去客户端发现更多好音乐 ></a>
+                </p>
+                <a href="https://y.qq.com/?ADTAG=myqq&nomobile=1#type=index">查看电脑版网页</a>
+                <div class="footer-logo">
+                    <img src="">
+                </div>
+                <p class="copyright">Copyright © 1998 -
+                    <span id="js_cpright_year">2018</span> Tencent. All Rights Reserved.</p>
+                <p id="js_iosinfo" class="copyright" style="">联系电话：0755-86013388 QQ群：55209235</p>
+            </footer>
+         </div>
+        
+        <!-- 排行版 -->
+        <div id="rank-view" class="rank-view tab-content hide">
+            <ul class="toplist">
+
+            </ul>
         </div>
-        <div class="rank-view tab-content hide">
-            排行榜
-        </div>
-        <div class="search-view tab-content hide">
-            search
+
+        <!-- 搜索 -->
+        <div id="search-view" class="search-view tab-content hide">
+            <div class="search-bar">
+                <div class="input-wrap">
+                    <input id="search" type="text" placeholder="搜索歌曲、歌单、专辑">
+                    <span class="icon-search"></span>
+                </div>
+            </div>
+            <div class="search-results">
+                <div class="song-list">
+                    
+                </div>
+            </div>
+            <div class="search-loading">
+                <i class="loading-icon"></i>
+                <div class="loading-text">正在载入更多...</div>
+                <div class="loading-done hide">已加载全部</div>
+            </div>
         </div>
     </div>
+
+
+
+        <!-- 底部 -->
+    
+    
     
     <script src="scripts/slider.js"></script>
     <script src="scripts/lazyload.js"></script>
     <script src="scripts/tab.js"></script>
+    <script src="scripts/search.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>
