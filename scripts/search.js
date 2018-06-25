@@ -67,19 +67,19 @@ class Search {
 
 
 
-    append(songs) {
-        `#player?artist=李荣浩&songid=203763079&songname=如果有一天 (live)&albummid=003W1FEC3IGkgz$duration=284`
-        let html = songs.map(song => {
-            let artist = song.singer.map(s => s.name).join(' ')
-            return `
-            <a class="song-item"
-               href="#player?artist=${artist}&songid=${song.songid}&songname=${song.songname}&albummid=${song.albummid}&duration=${song.interval}">
-              <i class="icon icon-music"></i>
-              <div class="song-name ellipsis">${song.songname}</div>
-              <div class="song-artist ellipsis">${artist}</div>
-            </a>`}).join('')
-        this.$songs.insertAdjacentHTML('beforeend', html)
-    }
+    // append(songs) {
+    //     `#player?artist=李荣浩&songid=203763079&songname=如果有一天 (live)&albummid=003W1FEC3IGkgz$duration=284`
+    //     let html = songs.map(song => {
+    //         let artist = song.singer.map(s => s.name).join(' ')
+    //         return `
+    //         <a class="song-item"
+    //            href="#player?artist=${artist}&songid=${song.songid}&songname=${song.songname}&albummid=${song.albummid}&duration=${song.interval}">
+    //           <i class="icon icon-music"></i>
+    //           <div class="song-name ellipsis">${song.songname}</div>
+    //           <div class="song-artist ellipsis">${artist}</div>
+    //         </a>`}).join('')
+    //     this.$songs.insertAdjacentHTML('beforeend', html)
+    // }
 
     loading() {
         this.fetching = true
