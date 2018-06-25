@@ -45,10 +45,10 @@ class MusicPlayer {
     }
 
     show() {
-
+        this.$el.classList.add('show')
     }
 
     hide() {
-        // this.$el.classList.remove('show')
+        this.$el.classList.remove('show')
     }
 }

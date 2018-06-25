@@ -36,7 +36,7 @@
           }, {})
           player.play(options)
         } else {
-          player.hide()
+        //   player.hide()
         }
       }
 

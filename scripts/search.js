@@ -53,13 +53,48 @@ class Search {
         .catch(() => this.fetching = false)
     }
 
+    // append(songs) {
+    //     `#player?artist=李荣浩&songid=203763079&songname=如果有一天 (live)&albummid=003W1FEC3IGkgz$duration=284`
+    //     let html = songs.map(song => `
+    //     <li class="song-item">
+    //         <i class="icon icon-music"></i>
+    //         <div class="song-name ellipsis">${song.songname}</div>
+    //         <div class="song-artist ellipsis">${song.singer.map(s => s.name).join(' ')}</div>
+    //     </li>`).join('')
+    //     this.$songs.insertAdjacentHTML('beforeend', html)
+    // }
+
+
+
+
     append(songs) {
-        let html = songs.map(song => `
-        <li class="song-item">
-            <i class="icon icon-music"></i>
-            <div class="song-name ellipsis">${song.songname}</div>
-            <div class="song-artist ellipsis">${song.singer.map(s => s.name).join(' ')}</div>
-        </li>`).join('')
+        `#player?artist=李荣浩&songid=203763079&songname=如果有一天 (live)&albummid=003W1FEC3IGkgz$duration=284`
+        let html = songs.map(song => {
+            let artist = song.singer.map(s => s.name).join(' ')
+            return `
+            <a class="song-item"
+               href="#player?artist=${artist}&songid=${song.songid}&songname=${song.songname}&albummid=${song.albummid}&duration=${song.interval}">
+              <i class="icon icon-music"></i>
+              <div class="song-name ellipsis">${song.songname}</div>
+              <div class="song-artist ellipsis">${artist}</div>
+            </a>`}).join('')
         this.$songs.insertAdjacentHTML('beforeend', html)
+    }
+
+    loading() {
+        this.fetching = true
+        this.$el.querySelector('.search-loading').classList.add('show')
+    }
+
+    done() {
+        this.fetching = false
+        if (this.nomore) {
+            this.$el.querySelector('.loading-icon').style.display = 'none'
+            this.$el.querySelector('.loading-text').style.display = 'none'
+            this.$el.querySelector('.loading-done').style.display = 'block'
+            this.$el.querySelector('.search-loading').classList.add('show')
+        } else {
+            this.$el.querySelector('.search-loading').classList.remove('show')
+        }
     }
 }
