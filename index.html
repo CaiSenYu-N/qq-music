@@ -11,6 +11,7 @@
     <header id="header">
         <h1>QQ 音乐</h1>
         <img src="images/logo.png" alt="Logo" id="logo">
+        <div class="show-player">播放器</div>
     </header>
 
     <!-- Tab切换 -->
@@ -79,14 +80,37 @@
 
 
 
-        <!-- 底部 -->
-    
+        <!-- 播放器 -->
+    <div id="player" class="show">
+        <div class="player-container">
+            <div class="player-header">
+                <img class="album-cover">
+                <div class="song-info">
+                    <div class="song-name ellipsis"></div>
+                    <div class="song-artist ellipsis"></div>
+                </div>
+                <span class="icon-action icon-play"></span>
+            </div>
+            <div class="player-lyrics"></div>
+            <div class="player-footer">
+                <div class="icon-list"></div>
+                <div class="progress"></div>
+                <div class="actions">
+                    <a href="#" class="btn-download">下载这首歌</a>
+                </div>
+            </div>
+        </div>
+        <div class="player-background"></div>
+    </div>
     
     
     <script src="scripts/slider.js"></script>
     <script src="scripts/lazyload.js"></script>
     <script src="scripts/tab.js"></script>
     <script src="scripts/search.js"></script>
+    <script src="scripts/progress_bar.js"></script>
+    <script src="scripts/lyrics_player.js"></script>
+    <script src="scripts/player.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>

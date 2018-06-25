@@ -76,6 +76,18 @@ img {
   #header #logo {
     height: 25px;
     margin-left: 10px; }
+  #header .show-player {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    top: 8px;
+    height: 28px;
+    padding: 0 12px;
+    line-height: 28px;
+    border-radius: 99px;
+    font-size: 14px;
+    background: #149c5a;
+    color: #fff; }
 
 .navbar .nav-list {
   display: flex;
@@ -350,6 +362,154 @@ img {
     font-size: 10px;
     text-align: center;
     color: rgba(0, 0, 0, 0.5); }
+
+#player {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  position: fixed;
+  transition: 0.3s;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-100%); }
+  #player.show {
+    opacity: 1;
+    transform: translateY(0); }
+  #player .player-container {
+    z-index: 9;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.6); }
+  #player .player-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: bottom center;
+    filter: blur(15px);
+    transform: scale(1.15); }
+  #player .player-header {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1); }
+    #player .player-header .icon-action {
+      width: 44px;
+      height: 44px;
+      border: solid 1px #fff;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.1);
+      opacity: .6;
+      margin-right: 10px;
+      background-image: url(../images/sprite_play.png);
+      background-repeat: no-repeat;
+      background-size: 40px 380px; }
+    #player .player-header .icon-play {
+      background-position: 15px -153px; }
+    #player .player-header .icon-pause {
+      background-position: 17px -183px; }
+    #player .player-header .album-cover {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin-right: 15px; }
+    #player .player-header .song-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: calc(100% - 150px); }
+    #player .player-header .song-name {
+      height: 30px;
+      font-size: 18px;
+      font-weight: normal;
+      color: #fff; }
+    #player .player-header .song-artist {
+      height: 21px;
+      font-size: 14px;
+      color: #fff; }
+  #player .player-lyrics {
+    flex: 1;
+    overflow: hidden;
+    margin: 36px 0 60px 0;
+    color: rgba(255, 255, 255, 0.6);
+    max-height: calc(100% - 205px); }
+    #player .player-lyrics .player-lyrics-lines {
+      overflow: hidden;
+      transition: .5s; }
+    #player .player-lyrics .player-lyrics-line {
+      height: 42px;
+      line-height: 42px;
+      overflow: hidden;
+      padding: 0 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center; }
+    #player .player-lyrics .active {
+      color: #31c27c; }
+  #player .player-footer {
+    position: relative; }
+    #player .player-footer .icon-list {
+      width: 40px;
+      height: 40px;
+      right: 13px;
+      top: -40px;
+      position: absolute;
+      background-image: url(../images/sprite_play.png);
+      background-repeat: no-repeat;
+      background-size: 40px 380px;
+      background-position: 8px -250px; }
+    #player .player-footer .progress {
+      display: flex;
+      align-items: center; }
+    #player .player-footer .progress-bar {
+      flex: 1;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.2); }
+      #player .player-footer .progress-bar .progress-bar-progress {
+        width: 100%;
+        height: 2px;
+        transform: translateX(-100%);
+        background: #31c27c; }
+    #player .player-footer .progress-time {
+      top: 0;
+      z-index: 1;
+      width: 55px;
+      font-size: 12px;
+      color: #808080;
+      line-height: 40px;
+      text-align: center;
+      letter-spacing: 1px; }
+    #player .player-footer .actions {
+      height: 65px;
+      margin-top: 10px; }
+    #player .player-footer .btn-download {
+      position: relative;
+      display: block;
+      height: 45px;
+      line-height: 40px;
+      margin: 0 45px;
+      padding: 0 45px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 20px;
+      color: #fff;
+      border-radius: 999px;
+      background-color: #31c27c;
+      text-align: center;
+      background-image: url(../images/sprite_play.png);
+      background-repeat: no-repeat;
+      background-size: 43px 380px;
+      background-position: 6px -321px; }
 
 body {
   background: #f4f4f4; }
