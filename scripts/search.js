@@ -37,20 +37,20 @@ class Search {
     }
 
     search(keyword, page) {
-        if (this.fetching) return
-        this.keyword = keyword
-        this.fetching = true
-        // fetch(`http://localhost:4000/search?keyword=${this.keyword}&page=${page || this.page}`)
-        .then(res => res.json())
-        .then(json => {
-            this.page = json.data.song.curpage
-            this.nomore = (json.message === 'no results')
-            this.songs.push(...json.data.song.list)
-            return json.data.song.list
-        })
-        .then(songs => this.append(songs))
-        .then(() => this.fetching = false)
-        .catch(() => this.fetching = false)
+        // if (this.fetching) return
+        // this.keyword = keyword
+        // this.fetching = true
+        // // fetch(`http://localhost:4000/search?keyword=${this.keyword}&page=${page || this.page}`)
+        // .then(res => res.json())
+        // .then(json => {
+        //     this.page = json.data.song.curpage
+        //     this.nomore = (json.message === 'no results')
+        //     this.songs.push(...json.data.song.list)
+        //     return json.data.song.list
+        // })
+        // .then(songs => this.append(songs))
+        // .then(() => this.fetching = false)
+        // .catch(() => this.fetching = false)
     }
 
     // append(songs) {
