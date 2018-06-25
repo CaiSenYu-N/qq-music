@@ -40,7 +40,7 @@ class Search {
         if (this.fetching) return
         this.keyword = keyword
         this.fetching = true
-        fetch(`http://localhost:4000/search?keyword=${this.keyword}&page=${page || this.page}`)
+        // fetch(`http://localhost:4000/search?keyword=${this.keyword}&page=${page || this.page}`)
         .then(res => res.json())
         .then(json => {
             this.page = json.data.song.curpage
