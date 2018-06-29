@@ -1,1 +1,12 @@
-https://github.com/CaiSenYu-N/qq-music.git
+* QQ音乐播放器
+
+>预览：https://caisenyu-n.github.io/qq-music/
+
+###实现功能：
+
+* 首页轮播
+* Tab切换（首页、推荐。搜索）
+* 图片懒加载
+* 播放器界面（进度条、播放暂停）
+
+###因qq音乐api接口关闭，未实现音乐播放功能，后期或会通过其他方式实现。
